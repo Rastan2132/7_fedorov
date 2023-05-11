@@ -117,3 +117,9 @@ void Uzond::sort(short flag)
 
     }
 }
+void Uzond::removePerson(int index) {
+    if (index < 0 || index >= people.size()) {
+        return;
+    }
+    people.erase(people.begin() + (index - 1));
+}

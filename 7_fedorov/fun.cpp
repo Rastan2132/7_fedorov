@@ -130,67 +130,46 @@ void edit(vector<Uzond>& program, short index_1, short index_2)
 	ShowCursor(0);
 }
 
-/*
-void dell(Uzond*& program)
+
+void dell(vector<Uzond>& program)
 {
 	cout << "Usunac uzytkownika lub uzytkownika? (u lub o)" << endl;
 	switch (_getch()) {
 	case (117):
 	{
-		if (program->size_property <= 0) {
+		if (program.size() <= 0) {
 			error();
 		}
-		cout << "Wybierz numer Uzond, ktory chcesz usunac (1 - " << program->size_property << "):" << endl;
+		cout << "Wybierz numer Uzond, ktory chcesz usunac (1 - " << program.size() << "):" << endl;
 		int num = 0;
 		cin >> num;
-		if (num < 1 || num > program->size_property) {
+		if (num < 1 || num > program.size()) {
 			error();
 		}
-		removeUzond(program, num);
-		short size = program->size_property;
-		size--;
-		program->size_property = size;
+		program.erase(program.begin()+(num-1));
+		
 		break;
 	}
 
 	case (111):
 	{
 
-		cout << "Wybierz numer uzytkownika, ktorego chcesz usunac(1 - " << program->size_Of_arr_peopls_property << "):" << endl;
+		cout << "Wybierz numer uzytkownika, ktorego chcesz usunac(1 - " << program[0].people_property.size() << "):" << endl;
 		int num = 0;
 		cin >> num;
-		if (num < 1 || num >  program->size_Of_arr_peopls_property) {
+		if (num < 1 || num >  program[0].people_property.size()) {
 			error();
 		}
 
-		for (int i = 0; i < program->size_property; i++) {
+		for (int i = 0; i < program.size(); i++) {
 			program[i].removePerson(num);
 		}
-		short size = program->size_Of_arr_peopls_property;
-		size--;
-		for (short i = 0; i < size; i++)
-			program[i].size_Of_arr_peopls_property = size;
+		
 		break;
 	}
 	}
 }
 
-void edit(Uzond*& program, short index_1, short index_2)
-{
-	system("cls");
-	ShowCursor(1);
-	if (index_1 < 0 || index_2 < 0)
-	{
-		error();
-	}
-
-	cout << "Wstepne dane:" << endl;
-	program[index_1].getPerson(index_2)->print();
-	cout << "Podaj Name Surname Year Pesel i sex: ";
-	program[index_1].getPerson(index_2)->edit();
-	ShowCursor(0);
-}
-*/
 void print_find(char* str, short str_size, char* keyword, short key_size, int text, int back)
 {
 	if (str == nullptr || keyword == nullptr) return;
