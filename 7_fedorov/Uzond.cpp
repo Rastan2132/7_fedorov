@@ -1,7 +1,7 @@
 #include "Header.h"
 
 Uzond Uzond::create(short size_of_people, const std::vector<std::string>& arrOfNameUrzant, const std::vector<std::string>& arrOfNames, const std::vector<std::string>& arrOfSurnames, const std::vector<std::string>& arrOfNameKindergarten, const std::vector<std::string>& arrOfWork) {
-    static Uzond uand;
+    Uzond uand;
     uand.Name_property = arrOfNameUrzant[rand() % arrOfNameUrzant.size()];
     uand.Numer_property = rand_data(_num);
 
