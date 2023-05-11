@@ -217,7 +217,7 @@ public:
     void setNumer(const std::string& Numer_) { Numer = Numer_; }
     std::string getNumer() const { return Numer; }
 
-
+    void addPerson(vector<string> arrOfNames, vector<string> arrOfSurnames, vector<string> arrOfNameKindergarten, vector<string> arrOfWork, bool flag);
     static Uzond create(short size_of_people, const std::vector<std::string>& arrOfNameUrzant, const std::vector<std::string>& arrOfNames, const std::vector<std::string>& arrOfSurnames, const std::vector<std::string>& arrOfNameKindergarten, const std::vector<std::string>& arrOfWork);
     void edit();    
     void print() const;
@@ -234,7 +234,7 @@ void error();
 bool isalpha_r(unsigned char a);
 bool isdigit_r(unsigned char a);
 
-
+void add(vector<Uzond>& program, vector<string> arr_name, vector<string> arr_surname, vector<string> arr_of_name_urzant, vector<string> arrOfNameKindergarten, vector<string> arrOfWork);
 void show(vector<Uzond> program);
 COORD getCursorPosition(void);
 void Clear(int x, int y, long cnt = 100);
