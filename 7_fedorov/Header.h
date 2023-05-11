@@ -111,7 +111,7 @@ class Uzond {
         __declspec(property(get = get_piesel, put = set_piesel)) std::string piesel_property;
         __declspec(property(get = get_sex, put = set_sex)) std::string sex_property;
         __declspec(property(get = get_fullname, put = set_fullname)) Full_name* fullname_property;
-
+        friend class Uzond;
     };
 
     class People : public Users {
@@ -141,7 +141,7 @@ class Uzond {
         }
         __declspec(property(get = get_work, put = set_work)) std::string work_property;
         __declspec(property(get = get_work_experience, put = set_work_experience)) std::string work_experience_property;
-
+        friend class Uzond;
     };
 
     class Children : public Users {
@@ -166,7 +166,7 @@ class Uzond {
             return *this;
         }
         __declspec(property(get = get_kindergarten, put = set_kindergarten)) std::string kindergarten_property;
-
+        friend class Uzond;
     };
 
     std::vector<Users*> people;
@@ -217,6 +217,8 @@ public:
     void setNumer(const std::string& Numer_) { Numer = Numer_; }
     std::string getNumer() const { return Numer; }
 
+
+    void sort(short flag);
     void addPerson(vector<string> arrOfNames, vector<string> arrOfSurnames, vector<string> arrOfNameKindergarten, vector<string> arrOfWork, bool flag);
     static Uzond create(short size_of_people, const std::vector<std::string>& arrOfNameUrzant, const std::vector<std::string>& arrOfNames, const std::vector<std::string>& arrOfSurnames, const std::vector<std::string>& arrOfNameKindergarten, const std::vector<std::string>& arrOfWork);    
     void print() const;

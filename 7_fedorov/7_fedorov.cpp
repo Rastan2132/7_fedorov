@@ -62,7 +62,7 @@ int main()
 			} while (true);
 			edit(program, urz_num - 1, p_num - 1);
 			break;
-		case (115):/* {
+		case (115): {
 			short flag = 0;
 			cout << endl << "Wybiesz:\n1 - posortowac za Name\n2 - posortowac za Surname\n3 - posortowac za sex\n4 - posortowac za piesel\n5 - posortowac za Year\n";
 			cout << endl;
@@ -91,9 +91,9 @@ int main()
 			}
 
 			}
-			for (short l = 0; l < program->get_size(); l++)
-			//	program[l].sort(flag);
-			}*/
+			for (short l = 0; l < program.size(); l++)
+				program[l].sort(flag);
+			}
 				  break;
 		case (121):
 			//find(program);
