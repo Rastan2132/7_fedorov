@@ -85,7 +85,6 @@ void Uzond::Users::edit() {
 	}
 
 }
-/*
 void Uzond::Users::find(char* keyword) const {
 
 
@@ -105,4 +104,4 @@ void Uzond::Users::find(char* keyword) const {
 		cout << endl;
 	}
 
-}*/
+}

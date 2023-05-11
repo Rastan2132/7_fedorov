@@ -190,7 +190,7 @@ void edit(Uzond*& program, short index_1, short index_2)
 	program[index_1].getPerson(index_2)->edit();
 	ShowCursor(0);
 }
-
+*/
 void print_find(char* str, short str_size, char* keyword, short key_size, int text, int back)
 {
 	if (str == nullptr || keyword == nullptr) return;
@@ -233,7 +233,7 @@ void print_find(char* str, short str_size, char* keyword, short key_size, int te
 	setCursorPosition(cursor.X, cursor.Y);
 	showcursor(true);
 }
-
+/*
 Uzond& Uzond::operator=(const Uzond& other) {
 	if (this != &other) {
 		// копируем обычные поля
@@ -310,10 +310,10 @@ void show(vector<Uzond> program)
 
 	cout << endl << endl;
 }
-/*
-void find(Uzond*& program)
+
+void find(vector<Uzond>& program)
 {
-	if (program == nullptr || program->get_size() == 0 || program->get_size_Of_arr_peopls() == 0)
+	if (program.size() == 0)
 	{
 		error();
 		return;
@@ -361,16 +361,15 @@ void find(Uzond*& program)
 	//Выводим новые результаты поиска
 
 
-	for (short l = 0; l < program->size_property; l++)
+	for (short l = 0; l < program.size(); l++)
 	{
 		cout << "Rezultat o " << l + 1 << " linii" << endl;
-		for (short i = 0; i < program->size_Of_arr_peopls_property; i++)
+		for (short i = 0; i < program[0].people_property.size(); i++)
 		{
-			program[l].getPerson(i)->find(keyword);
+			program[l].get_user(i)->find(keyword);
 		}
 		cout << endl;
 	}
 	system("pause");
 	delete[] keyword; keyword = nullptr;
 }
-*/

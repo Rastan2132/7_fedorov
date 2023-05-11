@@ -22,7 +22,7 @@ void Uzond::Children::save(std::ostream& out) const
 	Users::save(out);
 	out << Kindergarten_property << " ";
 }
-
+*/
 void Uzond::Children::find(char* keyword) const {
 
 
@@ -53,7 +53,7 @@ void Uzond::Children::find(char* keyword) const {
 
 }
 
-*/
+
 void Uzond::Children::edit() {
 
 	string line;

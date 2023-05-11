@@ -22,7 +22,7 @@ void Uzond::People::save(std::ostream& out) const
 	Users::save(out);
 	out << Work_property << " " << Work_experience_property << " ";
 }
-
+*/
 void Uzond::People::find(char* keyword) const {
 
 
@@ -54,7 +54,7 @@ void Uzond::People::find(char* keyword) const {
 	}
 
 }
-*/
+
 void Uzond::People::edit() {
 
 	string line;

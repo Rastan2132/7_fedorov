@@ -105,7 +105,7 @@ class Uzond {
         virtual void edit();
         virtual void print() const;
       //  virtual void save(std::ostream& out) const;
-      //  virtual void find(const char* keyword) const;
+        virtual void find(char* keyword) const;
 
         __declspec(property(get = get_year, put = set_year)) std::string year_property;
         __declspec(property(get = get_piesel, put = set_piesel)) std::string piesel_property;
@@ -129,7 +129,7 @@ class Uzond {
         void edit() override;
         void print() const override;
      //   void save(std::ostream& out) const override;
-     //   void find(const char* keyword) const override;
+        void find(char* keyword) const;
 
         People& operator=(const People& other) {
             if (this != &other) {
@@ -156,7 +156,7 @@ class Uzond {
         void edit() override;
         void print() const override;
       //  void save(std::ostream& out) const override;
-      //  void find(const char* keyword) const override;
+        void find(char* keyword) const;
 
         Children& operator=(const Children& other) {
             if (this != &other) {
@@ -221,9 +221,8 @@ public:
     void sort(short flag);
     void addPerson(vector<string> arrOfNames, vector<string> arrOfSurnames, vector<string> arrOfNameKindergarten, vector<string> arrOfWork, bool flag);
     static Uzond create(short size_of_people, const std::vector<std::string>& arrOfNameUrzant, const std::vector<std::string>& arrOfNames, const std::vector<std::string>& arrOfSurnames, const std::vector<std::string>& arrOfNameKindergarten, const std::vector<std::string>& arrOfWork);    
-    void print() const;
+  
     void save(std::ostream& out) const;
-    void find(const char* keyword) const;
     __declspec(property(get = getName, put = setName)) std::string Name_property;
     __declspec(property(get = getNumer, put = setNumer)) std::string Numer_property;
     __declspec(property(get = get_people, put = set_people)) std::vector<Users*> people_property;
@@ -236,6 +235,7 @@ bool isalpha_r(unsigned char a);
 bool isdigit_r(unsigned char a);
 
 
+void find(vector<Uzond>& program);
 void edit(vector<Uzond>& program, short index_1, short index_2);
 void add(vector<Uzond>& program, vector<string> arr_name, vector<string> arr_surname, vector<string> arr_of_name_urzant, vector<string> arrOfNameKindergarten, vector<string> arrOfWork);
 void show(vector<Uzond> program);
