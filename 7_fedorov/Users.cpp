@@ -16,6 +16,7 @@ void Uzond::Users::save(std::ostream& out) const
 		<< Year << " " << piesel << " "
 		<< sex << " ";
 }
+*/
 void Uzond::Users::edit() {
 
 	string line;
@@ -84,6 +85,7 @@ void Uzond::Users::edit() {
 	}
 
 }
+/*
 void Uzond::Users::find(char* keyword) const {
 
 

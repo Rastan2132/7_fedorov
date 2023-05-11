@@ -54,6 +54,7 @@ void Uzond::People::find(char* keyword) const {
 	}
 
 }
+*/
 void Uzond::People::edit() {
 
 	string line;
@@ -128,4 +129,3 @@ void Uzond::People::edit() {
 	}
 
 }
-*/

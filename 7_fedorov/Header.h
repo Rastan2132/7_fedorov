@@ -102,7 +102,7 @@ class Uzond {
         void set_fullname(Full_name* FullName_) { FullName = FullName_; }
         
         virtual ~Users() {}
-      //  virtual void edit();
+        virtual void edit();
         virtual void print() const;
       //  virtual void save(std::ostream& out) const;
       //  virtual void find(const char* keyword) const;
@@ -126,7 +126,7 @@ class Uzond {
         std::string get_work_experience() const { return work_experience; }
         void set_work_experience(const std::string& work_experience_) { work_experience = work_experience_; }
 
-     //   void edit() override;
+        void edit() override;
         void print() const override;
      //   void save(std::ostream& out) const override;
      //   void find(const char* keyword) const override;
@@ -153,7 +153,7 @@ class Uzond {
         std::string get_kindergarten() const { return kindergarten; }
         void set_kindergarten(const std::string& kindergarten_) { kindergarten = kindergarten_; }
 
-      //  void edit() override;
+        void edit() override;
         void print() const override;
       //  void save(std::ostream& out) const override;
       //  void find(const char* keyword) const override;
@@ -218,8 +218,7 @@ public:
     std::string getNumer() const { return Numer; }
 
     void addPerson(vector<string> arrOfNames, vector<string> arrOfSurnames, vector<string> arrOfNameKindergarten, vector<string> arrOfWork, bool flag);
-    static Uzond create(short size_of_people, const std::vector<std::string>& arrOfNameUrzant, const std::vector<std::string>& arrOfNames, const std::vector<std::string>& arrOfSurnames, const std::vector<std::string>& arrOfNameKindergarten, const std::vector<std::string>& arrOfWork);
-    void edit();    
+    static Uzond create(short size_of_people, const std::vector<std::string>& arrOfNameUrzant, const std::vector<std::string>& arrOfNames, const std::vector<std::string>& arrOfSurnames, const std::vector<std::string>& arrOfNameKindergarten, const std::vector<std::string>& arrOfWork);    
     void print() const;
     void save(std::ostream& out) const;
     void find(const char* keyword) const;
@@ -234,6 +233,8 @@ void error();
 bool isalpha_r(unsigned char a);
 bool isdigit_r(unsigned char a);
 
+
+void edit(vector<Uzond>& program, short index_1, short index_2);
 void add(vector<Uzond>& program, vector<string> arr_name, vector<string> arr_surname, vector<string> arr_of_name_urzant, vector<string> arrOfNameKindergarten, vector<string> arrOfWork);
 void show(vector<Uzond> program);
 COORD getCursorPosition(void);

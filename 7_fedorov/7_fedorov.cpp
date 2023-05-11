@@ -52,15 +52,15 @@ int main()
 		case (100):
 		//	dell(program);
 			break;
-		case (101):/*
+		case (101):
 			do {
 				cout << "wprowadz numer urzendu i numer osoby" << endl;
 				cin >> urz_num >> p_num;
-				if (urz_num > 0 && p_num > 0 && urz_num <= program->size_property && p_num <= program->size_Of_arr_peopls_property)
+				if (urz_num > 0 && p_num > 0 && urz_num <= program.size() && p_num <= program[0].people_property.size())
 					break;
 				error();
 			} while (true);
-			edit(program, urz_num - 1, p_num - 1);*/
+			edit(program, urz_num - 1, p_num - 1);
 			break;
 		case (115):/* {
 			short flag = 0;

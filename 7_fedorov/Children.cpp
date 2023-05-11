@@ -53,6 +53,7 @@ void Uzond::Children::find(char* keyword) const {
 
 }
 
+*/
 void Uzond::Children::edit() {
 
 	string line;
@@ -124,4 +125,3 @@ void Uzond::Children::edit() {
 	}
 
 }
-*/

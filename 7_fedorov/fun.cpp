@@ -114,6 +114,22 @@ void add(vector<Uzond>& program, vector<string> arr_name, vector<string> arr_sur
 		break;
 	}
 }
+void edit(vector<Uzond>& program, short index_1, short index_2)
+{
+	system("cls");
+	ShowCursor(1);
+	if (index_1 < 0 || index_2 < 0)
+	{
+		error();
+	}
+
+	cout << "Wstepne dane:" << endl;
+	program[index_1].get_user(index_2)->print();
+	cout << "Podaj Name Surname Year Pesel i sex: ";
+	program[index_1].get_user(index_2)->edit();
+	ShowCursor(0);
+}
+
 /*
 void dell(Uzond*& program)
 {
