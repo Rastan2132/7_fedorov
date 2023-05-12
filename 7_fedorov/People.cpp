@@ -15,14 +15,14 @@ void Uzond::People::print() const
 	SetColor(p);
 
 }
-/*
+
 void Uzond::People::save(std::ostream& out) const
 {
 	out << 1 << " ";
 	Users::save(out);
-	out << Work_property << " " << Work_experience_property << " ";
+	out << work << " " << work_experience << " ";
 }
-*/
+
 void Uzond::People::find(char* keyword) const {
 
 

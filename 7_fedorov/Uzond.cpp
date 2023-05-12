@@ -123,3 +123,60 @@ void Uzond::removePerson(int index) {
     }
     people.erase(people.begin() + (index - 1));
 }
+Uzond Uzond::initForFile(std::istream& in, short size_Of_arr_peopls) {
+    Uzond uand;
+    string name_u, numer;
+
+    in >> name_u >> numer;
+    uand.Name = name_u;
+    uand.Numer = numer;
+    int flag = 0;
+    string name, surname, year, pesel, sex;
+    if (size_Of_arr_peopls > 0) {
+        for (int j = 0; j < size_Of_arr_peopls; j++) {
+            in >> flag;
+            if (flag == 0) {
+                string k;
+                in >> name >> surname >> year >> pesel >> sex >> k;
+                uand.people.push_back(new Children(name, surname, year, pesel, sex, k));
+            }
+            else {
+                string Work_property, Work_experience_property;
+                in >> name >> surname >> year >> pesel >> sex >> Work_property >> Work_experience_property;
+                uand.people.push_back(new People(name, surname, year, pesel, sex, Work_property, Work_experience_property));
+            }
+
+        }
+    }
+    return uand;
+}
+
+std::istream& operator>>(vector<Uzond>& program, std::istream& in) {
+    short size, size_of_peopl;
+    in >> size >> size_of_peopl;
+    for (int i = 0; i < size; i++) {
+        program.push_back(Uzond::initForFile(in, size_of_peopl));
+    }
+    return in;
+}
+std::ostream& operator<<(std::ostream& out, const vector<Uzond>& program) {
+
+    for (short i = 0; i < program.size(); i++) {
+        program[i].save_(out);
+    }
+    return out;
+}
+bool Uzond::save_(std::ostream& out) const {
+
+
+        out << Name << " " << Numer << " ";
+        for (short j = 0; j < people.size(); j++) {
+
+            people[j]->save(out);
+
+        }
+        out << std::endl;
+    
+
+    return true;
+}

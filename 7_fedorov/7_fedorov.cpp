@@ -13,8 +13,8 @@ int main()
 	vector<string> arrOfNameKindergarten = { "Krasnoludek", "Sloneczko", "Bajka", "Promyczek" };
 	vector<string> arrOfWork = { "nauczyciel", "lekarz", "informatyk", "sprzedawca", "prawnik" };
 
-	//if (chek_file("Uzonds.txt") == 0)
-	//{
+	if (chek_file("Uzonds.txt") == 0)
+	{
 		short size = rand() % 10 + 1;
 		short size_of_peopl = rand() % 10 + 1;
 		for (short i = 0; i < size; i++) {
@@ -23,13 +23,13 @@ int main()
         }
 
 		
-//	}
-//	else
-//	{
-//		std::ifstream file("Uzonds.txt");
-//		program >> file;
-//		file.close();
-//	}
+	}
+	else
+	{
+		std::ifstream file("Uzonds.txt");
+		program >> file;
+		file.close();
+	}
 
 
 	if (program.size() < 0)
@@ -100,11 +100,11 @@ int main()
 			break;
 		}
 	} while (work);
-	//std::ofstream  file("Uzonds.txt");
-	//file << program->size_property << " " << program->size_Of_arr_peopls_property << " ";
-	//for (short i = 0; i < program->size_property; i++) {
-	//	file << program[i];
-	//}
-	//file.close();
+	std::ofstream  file("Uzonds.txt");
+	file << program.size() << " " << program[0].people_property.size() << " ";
+	
+		file << program;
+	
+	file.close();
 
 }

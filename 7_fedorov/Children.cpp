@@ -15,14 +15,14 @@ void Uzond::Children::print() const
 
 }
 
-/*
+
 void Uzond::Children::save(std::ostream& out) const
 {
 	out << 0 << " ";
 	Users::save(out);
-	out << Kindergarten_property << " ";
+	out << kindergarten << " ";
 }
-*/
+
 void Uzond::Children::find(char* keyword) const {
 
 

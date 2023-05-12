@@ -9,14 +9,14 @@ void Uzond::Users::print() const
 		<< left << setw(8) << setfill(' ') << sex << " ";
 
 }
-/*
+
 void Uzond::Users::save(std::ostream& out) const
 {
 	out << FullName->Name_property << " " << FullName->Surname_property << " "
 		<< Year << " " << piesel << " "
 		<< sex << " ";
 }
-*/
+
 void Uzond::Users::edit() {
 
 	string line;

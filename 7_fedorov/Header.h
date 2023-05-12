@@ -104,7 +104,7 @@ class Uzond {
         virtual ~Users() {}
         virtual void edit();
         virtual void print() const;
-      //  virtual void save(std::ostream& out) const;
+        virtual void save(std::ostream& out) const;
         virtual void find(char* keyword) const;
 
         __declspec(property(get = get_year, put = set_year)) std::string year_property;
@@ -128,7 +128,7 @@ class Uzond {
 
         void edit() override;
         void print() const override;
-     //   void save(std::ostream& out) const override;
+        void save(std::ostream& out) const override;
         void find(char* keyword) const;
 
         People& operator=(const People& other) {
@@ -155,7 +155,7 @@ class Uzond {
 
         void edit() override;
         void print() const override;
-      //  void save(std::ostream& out) const override;
+        void save(std::ostream& out) const override;
         void find(char* keyword) const;
 
         Children& operator=(const Children& other) {
@@ -221,8 +221,9 @@ public:
     void sort(short flag);
     void addPerson(vector<string> arrOfNames, vector<string> arrOfSurnames, vector<string> arrOfNameKindergarten, vector<string> arrOfWork, bool flag);
     static Uzond create(short size_of_people, const std::vector<std::string>& arrOfNameUrzant, const std::vector<std::string>& arrOfNames, const std::vector<std::string>& arrOfSurnames, const std::vector<std::string>& arrOfNameKindergarten, const std::vector<std::string>& arrOfWork);    
-  
-    void save(std::ostream& out) const;
+
+    static Uzond initForFile(std::istream& in, short size_Of_arr_peopls);
+    bool save_(std::ostream& out) const;
     __declspec(property(get = getName, put = setName)) std::string Name_property;
     __declspec(property(get = getNumer, put = setNumer)) std::string Numer_property;
     __declspec(property(get = get_people, put = set_people)) std::vector<Users*> people_property;
@@ -235,6 +236,7 @@ bool isalpha_r(unsigned char a);
 bool isdigit_r(unsigned char a);
 
 
+bool chek_file(string file);
 void dell(vector<Uzond>& program);
 void find(vector<Uzond>& program);
 void edit(vector<Uzond>& program, short index_1, short index_2);
@@ -257,5 +259,5 @@ void DeleteCh(char* str, int& cursor, int& term);
 void InsertCh(char* str, int buffer_size, int& cursor, int& term, char symb);
 
 
-std::istream& operator>>(Uzond*& program, std::istream& in);
-std::ostream& operator<<(std::ostream& out, const Uzond& program);
+std::istream& operator>>(vector<Uzond>& program, std::istream& in);
+std::ostream& operator<<(std::ostream& out, const vector<Uzond>& program);
